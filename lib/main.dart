@@ -1,9 +1,6 @@
 import 'package:bmicalculator/presentation/input_page/input_page.dart';
-import 'package:bmicalculator/presentation/result_page/result_page.dart';
 import 'package:bmicalculator/theme.dart';
 import 'package:flutter/material.dart';
-
-import 'presentation/shared/constants.dart';
 
 void main() {
   runApp(const MyApp());
