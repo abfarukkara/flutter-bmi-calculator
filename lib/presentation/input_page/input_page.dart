@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bmicalculator/business/bmi_business_logic.dart';
+import 'package:bmicalculator/business/theme_service.dart';
 import 'package:bmicalculator/presentation/input_page/widgets/missing_input_dialog.dart';
 import 'package:bmicalculator/presentation/shared/constants.dart';
 import 'package:bmicalculator/presentation/result_page/result_page.dart';
@@ -9,6 +10,7 @@ import 'package:bmicalculator/presentation/input_page/widgets/height_input.dart'
 import 'package:bmicalculator/presentation/input_page/widgets/weight_age_input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -71,11 +73,22 @@ class _InputPageState extends State<InputPage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeSerice = Provider.of<ThemeService>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'BMI CALCULATOR',
         ),
+        actions: [
+          IconButton(
+            onPressed: () => themeSerice.toggleThemeMode(),
+            icon: Icon(
+              themeSerice.onDarkMode ? Icons.sunny : Icons.nights_stay_rounded,
+              size: 25,
+            ),
+            splashRadius: 1,
+          )
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

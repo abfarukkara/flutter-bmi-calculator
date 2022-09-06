@@ -21,18 +21,13 @@ class GenderInputWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final theme = Theme.of(context);
     return SizedBox(
       height: size.height * 0.23,
       width: size.width * 0.43,
       child: TextButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          primary: backgroundColor,
-          onPrimary: foreGroundColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
+        style: theme.elevatedButtonTheme.style,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,7 +38,9 @@ class GenderInputWidget extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               label,
-              style: labelTextStyle.copyWith(color: Colors.white),
+              style: labelTextStyle.copyWith(
+                color: Colors.white,
+              ),
             ),
           ],
         ),
