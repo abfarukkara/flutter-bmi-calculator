@@ -31,17 +31,9 @@ class GenderInputWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FaIcon(
-              icon,
-              size: 70,
-            ),
+            FaIcon(icon, size: 70),
             const SizedBox(height: 20),
-            Text(
-              label,
-              style: labelTextStyle.copyWith(
-                color: Colors.white,
-              ),
-            ),
+            Text(label),
           ],
         ),
       ),

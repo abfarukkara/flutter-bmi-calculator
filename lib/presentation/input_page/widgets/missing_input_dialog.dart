@@ -1,3 +1,4 @@
+import 'package:bmicalculator/business/theme_service.dart';
 import 'package:bmicalculator/presentation/shared/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class MissingInputDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      backgroundColor: inAktiveColor,
+      // backgroundColor: inAktiveColor,
       elevation: 10,
       actionsAlignment: MainAxisAlignment.center,
       actions: [
